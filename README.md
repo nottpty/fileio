@@ -16,4 +16,4 @@ Task                                                  | Time
 4th task is the fastest run time because 4th task can copy many file more than 1st, 2nd,
 3rd and 5th task at a time. The first task is the slowest task because it can copy file
 just only one byte at a time. For a file using a byte array will faster if you increase size
-of a byte array.
+of a byte array because you reserved memory location to copy a file.
