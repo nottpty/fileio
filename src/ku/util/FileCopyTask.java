@@ -3,6 +3,7 @@ package ku.util;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -81,7 +82,12 @@ public class FileCopyTask implements Runnable {
 		// If 'in' is null then throw a RuntimeException 
 		// so the caller will know that filename could not be opened.
 		
-		//TODO If in (InputStream) is null, throw a RuntimeException with a message.
+		try {
+			if(in.read() >= 0)
+				return;
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 	/**
